@@ -45,7 +45,7 @@ public class Function {
             return 0;
         }
         if(current % 2 == 0){
-            return current+ evenFibonacciNumbers(current, previous + current, until);
+            return current + evenFibonacciNumbers(current, previous + current, until);
         }
         return evenFibonacciNumbers(current, previous + current, until);
     }
@@ -89,6 +89,44 @@ public class Function {
         return true;
     }
 
+    //------------------------------------------------------------------------------------------------------------------
+
+    /*
+    4) A palindrome number reads the same both ways. The largest palindrome made from the product of two 2-digit numbers is
+    9009 = 91x99.
+
+    Find the largest palindrome made from the product of two 3-digit numbers.
+    * */
+    public Integer largestPalindrome(){
+        Integer largestPalindrome = 0;
+
+        // 100 <= i <= 999
+        for(int i = 100; i < 1000 ; i++){           //100 is the smallest 3-digit number
+            for(int j = i ; j < 1000; j++){
+
+                Integer product = i*j;
+
+                if(isPalindrome(product) && product>largestPalindrome){
+                    largestPalindrome = product;
+                }
+            }
+        }
+
+        return largestPalindrome;
+    }
+    private boolean isPalindrome(Integer number){
+        String numberString = number.toString();
+
+        StringBuilder sb = new StringBuilder();
+        sb.append(numberString);
+
+        sb.reverse();
+
+        if(numberString.equals(sb.toString())){
+            return true;
+        }
+        return false;
+    }
 }
 
 

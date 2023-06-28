@@ -11,6 +11,7 @@ public class Main {
 
         print(function.largestPrimeFactorOf(600851475143L));
 
+        print((function.largestPalindrome()));
 
 
     }
