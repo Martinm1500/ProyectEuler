@@ -127,7 +127,68 @@ public class Function {
         }
         return false;
     }
+
+    //------------------------------------------------------------------------------------------------------------------
+    /*
+    5) 2520 is the smallest number that can be divided each of the numbers from 1 to 10 without any remainder.
+
+    What is the smallest positive number that is evenly divisible by all the numbers from 1 to 20?
+
+    * */
+
+    public Integer smallestNumberDivisibleFrom_1_to_20(){
+
+        Integer dividend = 20;
+
+        while(!divisibleFrom_1_to_20(dividend)){
+            dividend++;
+            if(divisibleFrom_1_to_20(dividend)){
+                break;
+            }
+        }
+
+        return dividend;
+    }
+
+    private boolean divisibleFrom_1_to_20(Integer number){
+        boolean ret = true;
+
+        for(int i = 1; i <= 20;i++){
+            ret = ret && (number%i ==0);
+        }
+        return ret;
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -13,6 +13,8 @@ public class Main {
 
         print((function.largestPalindrome()));
 
+        print(function.smallestNumberDivisibleFrom_1_to_20());
+
 
     }
     public static <T> void print(T data) {
